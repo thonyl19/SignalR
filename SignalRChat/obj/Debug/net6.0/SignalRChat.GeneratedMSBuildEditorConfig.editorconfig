@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\A\Code\github\SignalR\SignalR\SignalRChat
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/CountUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

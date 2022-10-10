@@ -4,7 +4,16 @@ SignalR 相關應用測試
 [開始使用 ASP.NET Core SignalR](https://learn.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-6.0&tabs=visual-studio-code)
 
 #### Log
-* 2022/10/10
+* 2022/10/10 - 線上人數監控
+`參考`
+[SignalR 實現線上人數與廣播訊息](https://dotblogs.com.tw/acelee/2017/02/14/153503)
+
+* 2022/10/10 - 監控測試
+`參考`
+[ASP.NET Core 中的記錄和診斷 SignalR](https://learn.microsoft.com/zh-tw/aspnet/core/signalr/diagnostics?view=aspnetcore-6.0)
+以前端的監測需求來說,沒什麼太大的用處
+
+* 2022/10/10 
 專找適用於 vscode 的教學案例
 ```
 //初始安裝程序

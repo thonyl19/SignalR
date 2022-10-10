@@ -16323,6 +16323,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\A\\Code\\github\\SignalR\\SignalR\\SignalRChat\\Pages\\CountUsers.cshtml",
+      "TargetPath": "Pages\\CountUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\A\\Code\\github\\SignalR\\SignalR\\SignalRChat\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
