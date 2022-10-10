@@ -1,7 +1,11 @@
+using SignalRChat.Hubs;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//**依賴項注入
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -22,4 +26,8 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+//**配置路由
+app.MapHub<ChatHub>("/chatHub");
 app.Run();
+
+

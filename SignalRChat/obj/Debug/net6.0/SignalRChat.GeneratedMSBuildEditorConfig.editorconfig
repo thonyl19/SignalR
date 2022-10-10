@@ -8,37 +8,41 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SignalRChat
 build_property.RootNamespace = SignalRChat
-build_property.ProjectDir = d:\A\Code\github\SignalR\SignalRChat\
+build_property.ProjectDir = D:\A\Code\github\SignalR\SignalR\SignalRChat\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\A\Code\github\SignalR\SignalRChat
+build_property.MSBuildProjectDirectory = D:\A\Code\github\SignalR\SignalR\SignalRChat
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/Error.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/Index.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/Privacy.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Index_old.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXhfb2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/_ViewImports.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/_ViewStart.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/A/Code/github/SignalR/SignalRChat/Pages/Shared/_Layout.cshtml]
+[D:/A/Code/github/SignalR/SignalR/SignalRChat/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qs0l4gmowu
