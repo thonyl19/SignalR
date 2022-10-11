@@ -6,19 +6,22 @@ SignalR 相關應用測試
 #### Todo
 -------- 
 * 2022/10/10 - 線上人數監控
-`參考`
-[SignalR 實現線上人數與廣播訊息](https://dotblogs.com.tw/acelee/2017/02/14/153503)
+
+	參考
+
+	[SignalR 實現線上人數與廣播訊息](https://dotblogs.com.tw/acelee/2017/02/14/153503)
 
 
 #### Log
 ---------
 * 2022/10/10 - swagger 引入
 
-	參考
-[Swashbuckle 與 ASP.NET Core 使用者入門](https://learn.microsoft.com/zh-tw/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio-code)
+	#### 參考
+	[Swashbuckle 與 ASP.NET Core 使用者入門](https://learn.microsoft.com/zh-tw/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio-code)
 ```
 	dotnet add package Swashbuckle.AspNetCore -v 6.2.3
 ```
+	
 [啟動成功,swagger 頁面](https://localhost:7165/index.html)
 
 * 2022/10/10 - 監控測試
@@ -41,8 +44,7 @@ dotnet tool install -g Microsoft.Web.LibraryManager.Cli
 //這個步驟必須等前面一個完成後再執行
 libman install @microsoft/signalr@latest -p unpkg -d wwwroot/js/signalr --files dist/browser/signalr.js --files dist/browser/signalr.js
 ```
-	啟動執程序
-```
+	//啟動執程序
 	cd .\SignalRChat 
 	dotnet watch run --project SignalRChat.csproj
 ```
