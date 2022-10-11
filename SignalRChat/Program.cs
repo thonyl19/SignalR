@@ -3,6 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 //builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddRazorPages();
 builder.Services.AddSwaggerGen();
@@ -14,7 +15,6 @@ var app = builder.Build();
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseHsts();
     app.UseSwagger();
     app.UseSwaggerUI(
         options =>
@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment()){
 else
 {
     app.UseExceptionHandler("/Error");
+    app.UseHsts();
 }
 
 //取消使用 https
@@ -45,7 +46,11 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 //**配置路由
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=UserCount}/{action=Index}/{id?}");
 app.MapHub<ChatHub>("/chatHub");
+app.MapHub<UserCountHub>("/UserCountHub");
 app.MapControllers();
 app.Run();
 

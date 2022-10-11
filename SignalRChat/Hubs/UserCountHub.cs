@@ -4,25 +4,16 @@ namespace SignalRChat.Hubs
 {
     public class UserCountHub : Hub
     {
-        public static List<string> lstConnectionID = new List<string>();
-        public override Task OnConnectedAsync()
+        public static List<string> _products = new();
+        public async Task SendProduct(string productName)
         {
-            lstConnectionID.Add(Context.ConnectionId);
-            broadCastOnlineCount(lstConnectionID.Count);
-            return base.OnConnectedAsync();
+            _products.Add(productName);
+            await Clients.All.SendAsync("ReceiveProduct", productName, _products.Count());
         }
-
-        public override Task OnDisconnectedAsync(Exception? exception)
+        public async Task ResetProduct()
         {
-            lstConnectionID.Remove(Context.ConnectionId);
-            broadCastOnlineCount(lstConnectionID.Count);
-            return base.OnDisconnectedAsync(exception);
-        }
-
-        //卡在 這一段 不work
-        public void broadCastOnlineCount(int count)
-        {
-            //Clients.All.broadCastOnlineCount(count);
+            _products.Clear();
+            await Clients.All.SendAsync("ReceiveResetProduct");
         }
     }
 }
