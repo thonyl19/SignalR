@@ -11,11 +11,16 @@ SignalR 相關應用測試
 
 	- [SignalR 實現線上人數與廣播訊息](https://dotblogs.com.tw/acelee/2017/02/14/153503)
 
+	啟動成功(http://localhost:5016/UserCount)
 
 ### Log
 ---------
+* 2022/10/11 - UserCount
+	#### 參考
+	- [Live-Product-Count-Using-Asp.Net-Core-6.0-with-SignalR](https://github.com/kalpeshsatasiya/Live-Product-Count-Using-Asp.Net-Core-6.0-with-SignalR)
 * 2022/10/11
 	- 取消使用 https
+  
 * 2022/10/10 - swagger 引入
 
 	#### 參考
