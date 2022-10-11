@@ -14,6 +14,8 @@ SignalR 相關應用測試
 
 ### Log
 ---------
+* 2022/10/11
+	- 取消使用 https
 * 2022/10/10 - swagger 引入
 
 	#### 參考
@@ -23,7 +25,7 @@ SignalR 相關應用測試
 	dotnet add package Swashbuckle.AspNetCore -v 6.2.3
 ```
 	
-    	啟動成功,swagger 頁面(https://localhost:7165/index.html)
+    	啟動成功,swagger 頁面(https://localhost:7165/swagger)
 
 * 2022/10/10 - 監控測試
 

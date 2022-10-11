@@ -33,7 +33,8 @@ else
     app.UseExceptionHandler("/Error");
 }
 
-app.UseHttpsRedirection();
+//取消使用 https
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
     app.UseHsts();
