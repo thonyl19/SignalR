@@ -9,10 +9,11 @@
         <input type="text" id=msg />
         <button type="button" @@click="broadcast" :disabled="isDisabled">Broadcast</button>
         <button type="button" @@click="Add" :disabled="isDisabled">Add</button>
+        <A><Label>{{count}}</Label></A>
+        {{list}}
     </div>
     <div class="row">
         <div v-for="(item,idx) in list" class="col-4">
-            <button type="button" @@click="close(idx,item)">del</button>
             <iframe :src=`Item?id=${item}`></iframe>
         </div>
     </div>
@@ -28,6 +29,7 @@
         data() {
             return {
                 list:[],
+                count:0,
                 isDisabled:true,
                 SignalHub:{}
             }
@@ -40,11 +42,21 @@
             }).catch(function (err) {
                 return console.error(err.toString());
             });
-            this.SignalHub.on("NewUser",(user)=>{
+            this.SignalHub.on("NewUser",(user,count)=>{
                 _self.list.push(user);
+                _self.count = count;
+            })
+            this.SignalHub.on("RemoveUser",(user,count)=>{
+                _self.count = count;
+                _self.remove(user);
             })
         },
         methods:{
+            remove(user){
+                debugger
+                var idx = this.list.indexOf(user);
+                if (idx!=-1) this.list.splice(idx,1);
+            },
             Add(){
                 this.SignalHub.invoke("NewUser");
             },
@@ -52,10 +64,7 @@
                 @* document.getElementById('call').src = '/GenesisNewMes/Areas/Example/SSE_page.aspx?m=broadcast&t=' +
                     encodeURIComponent(document.getElementById('msg').value) + '&_=' + Math.random(); *@
             }, 
-            close(idx,id){
-                this.list.splice(idx, 1);
-                this.SignalHub.invoke('RemoveUser',id);
-            }
+             
         },
     });
 </script>

@@ -15,9 +15,14 @@ SignalR 相關應用測試
 
 ### Log
 ---------
+* 2022/10/12 
+	- 導入 Vue 程序
+	- 改進 http://localhost:5016/CountUser/Main 和 Item 的呈現方式
+   
 * 2022/10/12 - 使用 Newtonsoft.Json
 	#### 參考
 	- [在 ASP.NET Core 和 SignalR 中使用 Newtonsoft.Json](https://towardsdev.com/using-newtonsoft-json-in-asp-net-core-and-signalr-55b0fa4645aa)
+  
 * 2022/10/11 - UserCount
 	#### 參考
 	- [Live-Product-Count-Using-Asp.Net-Core-6.0-with-SignalR](https://github.com/kalpeshsatasiya/Live-Product-Count-Using-Asp.Net-Core-6.0-with-SignalR)

@@ -50,7 +50,7 @@ app.MapRazorPages();
 //**配置路由
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=UserCount}/{action=Index}/{id?}");
+    pattern: "{controller}/{action=Index}/{id?}");
 app.MapHub<ChatHub>("/chatHub");
 app.MapHub<UserCountHub>("/UserCountHub");
 app.MapControllers();

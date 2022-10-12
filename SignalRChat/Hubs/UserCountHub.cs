@@ -17,24 +17,23 @@ namespace SignalRChat.Hubs
             await Clients.All.SendAsync("ReceiveResetProduct");
         }
 
-        public async Task Counts()
-        {
-            _products.Clear();
+        public async Task Counts(){
             await Clients.All.SendAsync("Counts",_Users.Count());
         }
 
         public async Task NewUser()
         {
-            var user = Guid.NewGuid().ToString();
+            var user = Guid.NewGuid().ToString(); 
             _Users.Add(user,0);
             await Clients.All.SendAsync("NewUser",user,_Users.Count());
+            await this.Counts();
         }
 
         public async Task RemoveUser(string id)
         {
             if (_Users.ContainsKey(id)) {
                 _Users.Remove(id);
-                await Clients.All.SendAsync("Counts",_Users.Count());
+                await Clients.All.SendAsync("RemoveUser",id,_Users.Count());
             }
         }
 

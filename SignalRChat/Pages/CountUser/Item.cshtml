@@ -3,13 +3,14 @@
 @{
     Layout = null;
 }
-<div class="container">
+<div id="app" class="container">
+    <button type="button" @@click="close">del</button>
     <div class="row">
         <div class="col-6">
-            User：<label id="User">@Model.id</label>
+            User：<label id="User">{{id}}</label>
         </div>
         <div class="col-6">
-            Count：<label id="Count">@Model.Count</label>
+            Count：<label id="Count">{{count}}</label>
         </div>
         <div class="col-6">
             <span id="timer"></span>
@@ -30,33 +31,37 @@
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script>
     $(()=>{
-
-    var connection = new signalR.HubConnectionBuilder().withUrl("/UserCountHub").build();
-    document.getElementById("timer").innerHTML = 0;
-    connection.on("NewUser",function(user,Count){
-        document.getElementById("Count").innerHTML = Count;        
-    })
-    connection.on("Count",function(Count){
-        document.getElementById("Count").innerHTML = Count;        
-    })
-
-    connection.onclose(async () => {
-        alert('close!!');
-        await start();
+        
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                id:'@Model.id',
+                count:@Model.Count,
+                SignalHub:'',
+            }
+        },
+        mounted(){
+            var _self = this;
+            this.SignalHub = new signalR.HubConnectionBuilder().withUrl("/UserCountHub").build();
+            this.SignalHub.on("NewUser",(user,count)=>{
+                _self.count = count;
+            })
+            this.SignalHub.start();
+            this.SignalHub.onclose(async () => {
+                alert('close!!');
+                await this.SignalHub.start();
+            });
+        },
+        methods:{
+            close(){
+                this.SignalHub.send('RemoveUser',this.id);
+            }
+        },
     });
-    @* var x;
-    function countTimeStart(){
-    x = setInterval(function() {
-            document.getElementById("timer").innerHTML = parseInt( document.getElementById("timer").innerHTML) +  1 ;
-        }, 60000);
-    }
-    function countTimeStop(){
-        if(x != undefined){
-            clearInterval(x);
-        }
-    } *@
-    })
-
+     
+    });
+    
 </script>
 
 
