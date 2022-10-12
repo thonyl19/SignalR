@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace SignalRChat.Pages
+namespace SignalRChat.Pages.CountUser
 {
-    public class CountUsers : PageModel
+    public class Count : PageModel
     {
-        private readonly ILogger<CountUsers> _logger;
+        private readonly ILogger<Count> _logger;
 
-        public CountUsers(ILogger<CountUsers> logger)
+        public Count(ILogger<Count> logger)
         {
             _logger = logger;
         }

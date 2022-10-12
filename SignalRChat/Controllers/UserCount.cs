@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace SignalRChat.Controllers
 {
+    //改寫成 Pages 模式,就不需要再有 Controller
     //[Route("[controller]")]
     public class UserCountController : Controller
     {

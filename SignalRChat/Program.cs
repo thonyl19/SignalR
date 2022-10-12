@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSignalR().AddNewtonsoftJsonProtocol();
+
 //**依賴項注入
 builder.Services.AddSignalR();
 

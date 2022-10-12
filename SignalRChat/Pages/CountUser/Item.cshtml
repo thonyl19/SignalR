@@ -1,0 +1,75 @@
+@page
+@model SignalRChat.Pages.CountUser.Item
+@{
+    Layout = null;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            User：<label id="User">@Model.id</label>
+        </div>
+        <div class="col-6">
+            Count：<label id="Count">@Model.Count</label>
+        </div>
+        <div class="col-6">
+            <span id="timer"></span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/vue.js" asp-append-version="true"></script>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script>
+    $(()=>{
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/UserCountHub").build();
+    document.getElementById("timer").innerHTML = 0;
+    connection.on("NewUser",function(user,Count){
+        document.getElementById("Count").innerHTML = Count;        
+    })
+    connection.on("Count",function(Count){
+        document.getElementById("Count").innerHTML = Count;        
+    })
+
+    connection.onclose(async () => {
+        alert('close!!');
+        await start();
+    });
+    @* var x;
+    function countTimeStart(){
+    x = setInterval(function() {
+            document.getElementById("timer").innerHTML = parseInt( document.getElementById("timer").innerHTML) +  1 ;
+        }, 60000);
+    }
+    function countTimeStop(){
+        if(x != undefined){
+            clearInterval(x);
+        }
+    } *@
+    })
+
+</script>
+
+
+ 
+ <style>
+		html, body {
+			font-size: 9pt;
+		}
+
+		#dura {
+			position: absolute;
+			top: 2px;
+			right: 2px;
+			opacity: 0.5;
+		}
+	</style>
